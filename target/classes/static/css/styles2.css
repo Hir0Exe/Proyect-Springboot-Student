@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background-color: #666666;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    float: left;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    z-index: 10000;
+}
+
+header > div {
+    float: left;
+    width: 50%;
+    justify-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #336666;
+    text-decoration: none;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: #99cc33;
+}
+
+main {
+    margin-top: 60px;
+    padding: 20px 20px 50px 20px;
+}
+
+footer {
+    background-color: #669933;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form button {
+    
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #666666;
+}
+
+p {
+    display: block;
+    margin: 0px;
+}
+
+.d-none {
+    display: none;
+}

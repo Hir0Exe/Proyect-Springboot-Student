@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - C2</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <!--<link rel="stylesheet" href="css/style.css" type="text/css">-->
+    <link rel="stylesheet" href="css/material-dashboard.css?v=2.1.1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div name="Nombre del equipo" style="width: 30%;">
+            <spam class="titleProyect">C al Cuadrado - Soluciones Inteligentes</spam>
+        </div>
+        <div name="Barra de navegación" style="width: 70%;">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="areas.html">Áreas</a></li>
+                    <li><a href="formulario.html" class="active">Formulario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>Formulario de Postulación</h2>
+        <form id="postulacion-form">
+            <div class="row">
+                <div style="width: 50%;padding-right: 20px;">
+                    <label for="nombre">Nombre completo:</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" required>
+                    
+                    <label for="profesion">Profesión:</label>
+                    <input class="form-control" type="text" id="profesion" name="profesion" required>
+                    
+                    <label for="telefono">Teléfono:</label>
+                    <input class="form-control" type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ingrese su número de telefono sin espacios ni puntos. Ej. 0123456789" required>
+                    
+                    <label for="email">Correo electrónico:</label>
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Ingrese un email valido con dominio. Ej. ejemplo@gmail.com" required>
+                    
+                    <label for="linkedin">LinkedIn:</label>
+                    <input class="form-control" type="url" id="linkedin" name="linkedin" placeholder="Ingrese el enlace obtenido directamente de su perfil. Ej. https://www.linkedin.com/in/ejemplo/" required>
+                    
+                    <label for="habilidades">Habilidades:</label>
+                    <div class="row" style="width: 50%;">
+                        <div class="col-6">
+                            <select class="form-select" id="habilidades" name="habilidades" required></select>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" onclick="agregarHabilidad();" class="btn btn-info">Agregar Habilidad</button>
+                        </div>
+                    </div>
+                    <label for="habilidadesSeleccionadas">Habilidades Seleccionadas:</label>
+                    <div class="row" id="habilidadesSeleccionadas" style="width: 50%; height: 100px; border: solid;">
+                        <nav>
+                            <ul>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="row" style="width: 50%;">
+                        <div class="col">
+                            <button type="reset" id="limpiarFormulario" class="btn btn-info">Limpiar</button>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 50%; display: flex; justify-content: center;">
+                    <img src="https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg" alt="img" width="100%" height="80%" />
+                </div>
+            </div>
+        </form>
+
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="modalTarjeta" tabindex="-1" 
+            role="dialog" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="modalTarjetaLabel">Tarjeta</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="botonCloseModal"><i class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="bodyModalTarjeta">
+            ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="botonCloseModal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="saveDevelopment();">Save</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 C al Cuadrado - Soluciones Inteligentes</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/utiles.js"></script>
+    <script src="js/plugins/sweetalert2.all.min.js"></script>
+    <script src="js/plugins/jquery-3.4.1.min.js"></script>
+    <script src="js/plugins/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <script src="js/plugins/jquery.validate.min.js"></script>
+    <script src="js/plugins/jquery-ui-1.12.min.js"></script>
+    <script src="js/plugins/popper.min.js"></script>
+    <script src="js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-material-design.min.js"></script>
+</body>
+</html>

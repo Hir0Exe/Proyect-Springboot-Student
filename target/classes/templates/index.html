@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructora Virtual</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Constructora Virtual</h1>
+            <div class="header-buttons">
+                <button onclick="showLoginModal()" id="btnInicioSesion">Iniciar Sesión</button>
+                <button onclick="showRegisterModal()" id="btnRegistro">Registrarse</button>
+                <div id="contentUserSesion" style="display: none;"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="search-section">
+            <input type="text" placeholder="Búsqueda">
+            <button onclick="showAdvancedSearchModal()">Busqueda avanzada</button>
+
+
+        </section>
+        <section class="properties-section" id="content-allPropiedades">
+            <div class="property-card">
+                <div class="property-image"></div>
+                <div class="property-description">
+                    <p>Descripción</p>
+                    <p>Precio $</p>
+                    <button>ver detalles</button>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image"></div>
+                <div class="property-description">
+                    <p>Descripción</p>
+                    <p>Precio $</p>
+                    <button>ver detalles</button>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image"></div>
+                <div class="property-description">
+                    <p>Descripción</p>
+                    <p>Precio $</p>
+                    <button>ver detalles</button>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image"></div>
+                <div class="property-description">
+                    <p>Descripción</p>
+                    <p>Precio $</p>
+                    <button>ver detalles</button>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image"></div>
+                <div class="property-description">
+                    <p>Descripción</p>
+                    <p>Precio $</p>
+                    <button>ver detalles</button>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image"></div>
+                <div class="property-description">
+                    <p>Descripción</p>
+                    <p>Precio $</p>
+                    <button>ver detalles</button>
+                </div>
+            </div>
+        </section>
+        <section class="publish-section">
+            <div class="publish-text">
+               
+                <p>¿Tienes una propiedad que deseas vender o alquilar? ¡Estás en
+ el lugar correcto! En nuestra plataforma, puedes publicar tus propiedades de manera
+  fácil y rápida. ¡Comienza hoy mismo y llega a potenciales compradores o inquilinos!</p>
+            </div>
+            
+            <img src="https://tse2.mm.bing.net/th?id=OIG1.frGddOgov7U0SlWp3e87&pid=ImgGn.jpg" alt="Imagen de publicación" style="border: 1px solid #ccc;  padding: 10px; width: 300px;">
+
+<button onclick="showPublicarModal()">Publicar</button>
+
+
+        </section>
+    </main>
+    
+
+    <div id= "publicarModal"     class="modal">
+        <div class="modal-content">
+    <span class="close" onclick="hidePublicarModal()">&times;</span>
+        <h2>Publicar Propiedad</h2>
+        <form id="form-savePropiedad">
+            <input type="hidden" id="usuario" required>
+            <label for="titulo">Título de la Propiedad</label>
+            <input type="text" id="titulo" name="titulo" required>
+            
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" rows="5" cols="100" required></textarea>
+            
+            <label for="tipo">Tipo de Propiedad</label>
+            <select id="tipo" name="tipo" required>
+                <option value="0">Casa</option>
+                <option value="1">Apartamento</option>
+                <option value="2">Terreno</option>
+                <option value="3">Propiedad Comercial</option>
+            </select>
+            
+            <label for="precio">Precio</label>
+            <input type="number" id="precio" name="precio" required>
+            
+            <label for="ubicacion">Ubicación</label>
+            <input type="text" id="ubicacion" name="ubicacion" required>
+            
+            <label for="superficie">Superficie (m²)</label>
+            <input type="number" id="superficie" name="superficie" required>
+            
+            <label for="habitaciones">Número de Habitaciones</label>
+            <input type="number" id="habitaciones" name="habitaciones" required>
+            
+            <label for="banios">Número de Baños</label>
+            <input type="number" id="banios" name="banios" required>
+            
+            <label for="imagenes">Imágenes</label>
+            <input type="file" id="imagenes" name="imagenes[]" multiple>
+            
+            <input type="submit" id="btnSavePropiedad" value="Publicar Propiedad">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+    
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideLoginModal()">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="form-inicioSesion">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Contraseña</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" id="btnIniciarSesion">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideRegisterModal()">&times;</span>
+            <h2>Registrarse</h2>
+            <form id="form-registrarUsuario">
+                <label for="register-name">Nombre</label>
+                <input type="name" id="register-name" name="name" required>
+
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" name="email" required>
+                <label for="register-password">Contraseña</label>
+                <input type="password" id="register-password" name="password" required>
+                <button type="submit" id="btnRegistrarUsuario">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Advanced Search Modal -->
+    <div id="advancedSearchModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideAdvancedSearchModal()">&times;</span>
+            <h2>Busqueda Avanzada</h2>
+            <form>
+                <label for="min-price">Precio Mínimo</label>
+                <input type="number" id="min-price" name="min-price">
+                <label for="max-price">Precio Máximo</label>
+                <input type="number" id="max-price" name="max-price">
+                <label for="bedrooms">Habitaciones</label>
+                <select id="bedrooms" name="bedrooms">
+                    <option value="">Seleccione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                </select>
+                <label for="bathrooms">Baños</label>
+                <select id="bathrooms" name="bathrooms">
+                    <option value="">Seleccione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                </select>
+                <label for="location">Ubicación</label>
+                <select id="location" name="location">
+                    <option value="">Seleccione</option>
+                    <option value="Medellin">Ubicación 1</option>
+                    <option value="Bogotá ">Ubicación 2</option>
+                    <option value="Cúcuta ">Ubicación 3</option>
+                </select>
+
+                <label for="property-type">Tipo de Propiedad</label>
+                <select id="property-type" name="property-type">
+                    <option value="">Seleccione</option>
+                    <option value="apartment">Apartamento</option>
+                    <option value="house">Casa</option>
+            
+                </select>
+                <div class="modal-buttons">
+                    <button type="button" onclick="hideAdvancedSearchModal()">Cancelar</button>
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="advancedSearchModal" style="display: none;">Advanced Search Modal</div>
+    <div id="loginModal" style="display: none;">Login Modal</div>
+    <div id="registerModal" style="display: none;">Register Modal</div>
+    <div id="publicarModal" style="display: none;">publicar Modal</div>
+
+
+    <script src="js/scripts.js" defer></script>
+</body>
+</html>
